@@ -18,7 +18,9 @@ public class Application {
 
         final TriangleService triangleService = new TriangleServiceImpl();
 
-        while(true) {
+        boolean exit = false;
+
+        while(!exit) {
 
             final Scanner scanner = new Scanner(System.in);
             try {
@@ -38,13 +40,14 @@ public class Application {
                 System.out.println("Triangle typ is " +triangleService.determineTriangleType(sideA, sideB, sideC));
             } catch (InputMismatchException e) {
                 System.out.println("Wrong input, try again");
+                scanner.next();
             } catch (InvalidTriangleSideException e) {
                 System.out.println("Wrong input. " +e.getMessage());
             } finally {
-                System.out.print("Try again? [y] ");
+                System.out.println("Try again? [y] ");
                 String option = scanner.next();
                 if(!"y".equals(option)) {
-                    System.exit(0);
+                    exit = true;
                 }
             }
         }
