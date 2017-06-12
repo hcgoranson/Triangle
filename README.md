@@ -12,3 +12,6 @@ Command for creating runnable jar: `mvn clean package`
 Command for running the jar file; `java -jar target/Triangle-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
 Build and run command: `mvn clean package && java -jar && target/Triangle-1.0-SNAPSHOT-jar-with-dependencies.jar`
+
+## Descripton
+A description of this project can be found in the TriangleDescription PDF
